@@ -46,7 +46,7 @@ const createRadioButton = function() {
     radioButtons.appendChild(radioButtonLabel);
 }
 
-// modal - check API and data, create radio button
+// modal -> check API and data, create radio button
 const addNewApi = async function() {
     try {   
         modalAlert.innerHTML = "";
