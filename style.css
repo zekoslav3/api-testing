@@ -1,0 +1,30 @@
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    font-weight: 300;
+    padding-top: 1.5rem;
+}
+
+.sub-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+#radio-buttons {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#radio-buttons label {
+    margin-right: 0.25rem;
+}
+
+.json {
+    background: #f7f7f7;
+}
+
+.code-text-color {
+    color: #333;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API testing</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">API JSON testing</h1>
+        <h3 class="sub-title">Test different <a href="https://jsonplaceholder.typicode.com/" target="_blank">{JSON} Placeholder API</a> calls.</h3>
+
+        <p class="mb-4">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-new-api">Add API</button>
+        </p>
+
+        <div id="modal-return" class="alert alert-success alert-dismissible fade show" role="alert" hidden>
+            <span id="modal-alert-text"></span>
+            <button type="button" class="btn-close" onclick="closeModalReturn()"></button>
+        </div>
+
+        <p>Select API data to display.</p>
+        <div class="mb-4" id="radio-buttons">           
+            <input type="radio" class="btn-check" name="api-button" id="users-outlined" autocomplete="off">
+            <label class="btn btn-outline-dark" for="users-outlined">Users</label>
+
+            <input type="radio" class="btn-check" name="api-button" id="posts-outlined" autocomplete="off">
+            <label class="btn btn-outline-dark" for="posts-outlined">Posts</label>
+
+            <input type="radio" class="btn-check" name="api-button" id="albums-outlined" autocomplete="off">
+            <label class="btn btn-outline-dark" for="albums-outlined">Albums</label>
+        </div>
+        
+        <hr class="mb-4 mt-4" />
+
+        <p class="mb-4">
+            <button id="run-button" type="button" class="btn btn-success" onclick="getData()">Run</button>
+            <button id="reset-button" type="button" class="btn btn-secondary" onclick="resetData()">Reset</button>
+        </p>
+
+        <div class="json mb-4">
+            <div id="error-alert" class="alert alert-danger" role="alert" hidden></div>
+            <div id="data-length" class="mb-3"></div>
+            <code id="result" class="code-text-color"></code>
+        </div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="add-new-api" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel">Add new API</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeModal()"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="modal-alert" role="alert"></div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="url-title" class="col-form-label">Title</label>
+                                <input type="text" class="form-control" id="url-title" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="url" class="col-form-label">URL</label>
+                                <input type="url" class="form-control" id="url" required>
+                                <div id="urlHelp" class="form-text">
+                                    URL examples:<br />
+                                    <b>https://jsonplaceholder.typicode.com/todos</b><br />
+                                    <b>https://jsonplaceholder.typicode.com/comments</b>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeModal()">Close</button>
+                        <button id="modal-save" type="submit" class="btn btn-primary" onclick="saveButton()">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
